@@ -1,0 +1,44 @@
+.markMap {
+    width: 100%;
+    height: 600px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 태블릿 화면 (768px 이하) */
+@media screen and (max-width: 768px) {
+    .markMap {
+        height: 500px;
+        max-width: 100%;
+        margin: 0 10px;
+        border-radius: 6px;
+    }
+}
+
+/* 모바일 화면 (480px 이하) */
+@media screen and (max-width: 480px) {
+    .markMap {
+        height: 400px;
+        margin: 0 5px;
+        border-radius: 4px;
+    }
+}
+
+/* 작은 모바일 화면 (320px 이하) */
+@media screen and (max-width: 320px) {
+    .markMap {
+        height: 350px;
+        margin: 0;
+        border-radius: 0;
+    }
+}
+
+/* 큰 데스크톱 화면 (1200px 이상) */
+@media screen and (min-width: 1200px) {
+    .markMap {
+        height: 700px;
+        max-width: 1400px;
+    }
+}

@@ -1,0 +1,272 @@
+.main_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: clamp(200px, 35vh, 300px);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: clamp(15px, 3vw, 30px);
+    
+}
+
+.bgImg{
+    width: 100%;
+    object-fit: cover;
+}
+
+.main_box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.main_box_title{
+    color: white;
+    font-size: clamp(24px, 4.5vw, 45px);
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: clamp(20px, 4vw, 35px);
+    line-height: 1.2;
+}
+
+.main_box_tab{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(70px, 7vw, 160px), 1fr));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    border-radius: clamp(8px, 2vw, 12px);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    position: relative;
+    width: clamp(280px, 80vw, 1000px);
+    max-width: 100%;
+}
+
+.main_box_tab > li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-left: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+    min-height: clamp(40px, 7vh, 50px);
+    font-size: clamp(12px, 2vw, 16px);
+    font-weight: 500;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.main_box_tab > li:hover{
+    background-color: #1483c4;
+    color: white;
+    box-shadow: 0 4px 12px rgba(20, 131, 196, 0.3);
+}
+
+.main_box_tab > li:first-child{
+    background-color: #1483c4;
+    color: white;
+    border-left: none;
+}
+
+.main_box_tab > li.active{
+    background-color: #1483c4;
+    color: white;
+}
+
+.main_box_tab > li a {
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: inherit;
+    box-sizing: border-box;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .main_box {
+        height: clamp(280px, 50vh, 400px);
+        padding: clamp(12px, 2.5vw, 25px);
+        overflow: visible;
+        min-height: 300px;
+    }
+    
+    .main_box_title {
+        font-size: clamp(20px, 4vw, 35px);
+        margin-bottom: clamp(15px, 3.5vw, 25px);
+    }
+    
+    .main_box_tab {
+        grid-template-columns: repeat(2, 1fr);
+        width: clamp(260px, 75vw, 650px);
+        max-height: none;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .main_box_tab > li {
+        font-size: clamp(11px, 1.8vw, 14px);
+        padding: clamp(8px, 1.8vw, 12px);
+        min-width: clamp(60px, 11vw, 90px);
+        min-height: clamp(35px, 6vh, 45px);
+    }
+}
+
+@media (max-width: 768px) {
+    .main_box {
+        height: auto;
+        min-height: clamp(200px, 35vh, 280px);
+        padding: clamp(12px, 3vw, 20px);
+        overflow: visible;
+    }
+    
+    .main_box_title {
+        font-size: clamp(18px, 3.5vw, 28px);
+        margin-bottom: clamp(12px, 3vw, 18px);
+    }
+    
+    .main_box_tab {
+        grid-template-columns: 1fr;
+        width: clamp(240px, 80vw, 350px);
+        max-height: none;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .main_box_tab > li {
+        font-size: clamp(10px, 2.2vw, 12px);
+        padding: clamp(6px, 1.8vw, 10px);
+        border-left: none;
+        border-bottom: 1px solid #e9ecef;
+        min-height: clamp(35px, 7vh, 45px);
+        min-width: clamp(50px, 8vw, 70px);
+    }
+    
+    .main_box_tab > li:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .main_box {
+        height: clamp(140px, 25vh, 180px);
+        padding: clamp(10px, 2.5vw, 15px);
+    }
+    
+    .main_box_title {
+        font-size: clamp(16px, 3vw, 24px);
+        margin-bottom: clamp(10px, 2.5vw, 15px);
+    }
+    
+    .main_box_tab {
+        width: clamp(220px, 85vw, 300px);
+        border-radius: clamp(6px, 1.5vw, 10px);
+    }
+    
+    .main_box_tab > li {
+        font-size: clamp(9px, 2.5vw, 11px);
+        padding: clamp(6px, 2vw, 10px);
+        border-bottom: 1px solid #e9ecef;
+        min-height: clamp(30px, 6vh, 40px);
+    }
+    
+    .main_box_tab > li:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .main_box {
+        height: clamp(120px, 22vh, 160px);
+        padding: clamp(8px, 2vw, 12px);
+    }
+    
+    .main_box_title {
+        font-size: clamp(14px, 2.8vw, 20px);
+        margin-bottom: clamp(8px, 2vw, 12px);
+    }
+    
+    .main_box_tab {
+        width: clamp(200px, 90vw, 260px);
+    }
+    
+    .main_box_tab > li {
+        font-size: clamp(8px, 2.2vw, 10px);
+        padding: clamp(5px, 1.8vw, 8px);
+    }
+}
+
+/* 접근성 개선 */
+@media (prefers-reduced-motion: reduce) {
+    .main_box_tab > li {
+        transition: none;
+    }
+    
+    .main_box_tab > li:hover {
+        transform: none;
+    }
+}
+
+/* 고대비 모드 지원 */
+@media (prefers-contrast: high) {
+    .main_box::before {
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .main_box_title {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    }
+    
+    .main_box_tab > li {
+        border: 2px solid #000;
+    }
+    
+    .main_box_tab > li:hover,
+    .main_box_tab > li:first-child,
+    .main_box_tab > li.active {
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+    .main_box_tab {
+        background-color: #2a2a2a;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .main_box_tab > li {
+        background-color: #2a2a2a;
+        color: #fff;
+        border-color: #555;
+    }
+    
+    .main_box_tab > li:hover,
+    .main_box_tab > li:first-child,
+    .main_box_tab > li.active {
+        background-color: #1483c4;
+        color: #fff;
+    }
+}

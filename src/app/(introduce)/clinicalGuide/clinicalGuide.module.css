@@ -1,0 +1,97 @@
+.guide_title{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.guide{
+    background-color: #f2f2f2;
+    max-width: clamp(300px, 90vw, 1200px);
+    margin: clamp(20px, 4vw, 50px);
+    border-radius: clamp(8px, 2vw, 12px);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.guide_explain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(20px, 4vw, 30px);
+    gap: clamp(26px, 8vw, 105px);
+    flex-wrap: wrap;
+}
+
+.guide_days{
+    display: flex;
+    flex-direction: column;
+    text-align-last : justify;
+    font-size: clamp(14px, 2.5vw, 25px);
+    color: #666666;
+    gap: clamp(6px, 1.5vw, 10px);
+    min-width: clamp(80px, 20vw, 150px);
+}
+
+.guide_days > div {
+    text-align: center;
+    white-space: nowrap;
+    padding: clamp(4px, 1vw, 8px);
+    font-weight: 800;
+}
+
+.guide_time{
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(14px, 2.5vw, 25px);
+    color: #666666;
+    gap: clamp(6px, 1.5vw, 10px);
+    min-width: clamp(120px, 25vw, 200px);
+    text-align-last : justify;
+}
+
+.guide_time > div{
+    white-space: nowrap;
+    padding: clamp(4px, 1vw, 8px);
+    text-align: center;
+}
+
+.holiday{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(10px, 2vw, 20px);
+}
+
+.guide_holiday{
+    font-size: clamp(14px, 2.5vw, 25px);
+    margin: clamp(15px, 3vw, 30px);
+    padding-bottom: clamp(5px, 1vw, 10px);
+    color: #224287;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .guide {
+        margin: clamp(15px, 3vw, 40px);
+    }
+    
+    .guide_explain {
+        padding: clamp(15px, 3vw, 25px);
+        gap: clamp(15px, 3vw, 60px);
+    }
+    
+    .guide_days,
+    .guide_time {
+        font-size: clamp(13px, 2.2vw, 22px);
+        gap: clamp(5px, 1.2vw, 8px);
+    }
+    
+    .guide_holiday {
+        font-size: clamp(13px, 2.2vw, 22px);
+        margin: clamp(12px, 2.5vw, 25px);
+    }
+}
+

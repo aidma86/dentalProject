@@ -1,0 +1,175 @@
+.card_box{
+    display: flex;
+    width: clamp(300px, 90vw, 800px);
+    height: auto;
+    min-height: clamp(400px, 60vh, 550px);
+    background-color: #f2f2f2;
+    margin-bottom: clamp(30px, 6vw, 100px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: clamp(8px, 2vw, 12px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    flex-direction: row;
+}
+
+.card_box:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.doctor{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: clamp(15px, 3vw, 30px);
+    min-height: clamp(200px, 30vh, 300px);
+}
+
+.doctor_img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: clamp(4px, 1vw, 8px);
+}
+
+.doctor_explain{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(20px, 4vw, 40px);
+    gap: clamp(10px, 2vw, 20px);
+}
+
+.doctor_explain > h2 {
+    font-size: clamp(20px, 4vw, 40px);
+    margin: 0;
+    color: #224187;
+    text-align: left;
+}
+
+.doctor_explain > div {
+    display: flex;
+    flex-direction: column;
+    color: #666666;
+    gap: clamp(6px, 1.5vw, 10px);
+    font-size: clamp(12px, 2.5vw, 15px);
+    line-height: 1.6;
+}
+
+.doctor_explain > div > span {
+    padding: clamp(3px, 0.8vw, 5px) 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .card_box {
+        width: clamp(280px, 85vw, 700px);
+        margin-bottom: clamp(25px, 5vw, 80px);
+    }
+    
+    .doctor {
+        padding: clamp(12px, 2.5vw, 25px);
+    }
+    
+    .doctor_explain {
+        padding: clamp(15px, 3vw, 30px);
+    }
+    
+    .doctor_explain > h2 {
+        font-size: clamp(18px, 3.5vw, 32px);
+    }
+    
+    .doctor_explain > div {
+        font-size: clamp(11px, 2.2vw, 14px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card_box {
+        width: clamp(260px, 90vw, 600px);
+        margin-bottom: clamp(20px, 4vw, 60px);
+        flex-direction: column;
+    }
+    
+    .doctor {
+        padding: clamp(10px, 2vw, 20px);
+        min-height: clamp(180px, 25vh, 250px);
+    }
+    
+    .doctor_explain {
+        padding: clamp(12px, 2.5vw, 25px);
+    }
+    
+    .doctor_explain > h2 {
+        font-size: clamp(16px, 3vw, 28px);
+        text-align: center;
+    }
+    
+    .doctor_explain > div {
+        font-size: clamp(10px, 2vw, 13px);
+    }
+}
+
+@media (max-width: 480px) {
+    .card_box {
+        width: clamp(240px, 95vw, 500px);
+        margin-bottom: clamp(15px, 3vw, 40px);
+        flex-direction: column;
+    }
+    
+    .doctor {
+        padding: clamp(8px, 1.5vw, 15px);
+        min-height: clamp(150px, 20vh, 200px);
+    }
+    
+    .doctor_explain {
+        padding: clamp(10px, 2vw, 20px);
+    }
+    
+    .doctor_explain > h2 {
+        font-size: clamp(14px, 2.8vw, 24px);
+        text-align: center;
+    }
+    
+    .doctor_explain > div {
+        font-size: clamp(9px, 1.8vw, 12px);
+    }
+}
+
+@media (max-width: 360px) {
+    .card_box {
+        width: clamp(220px, 98vw, 400px);
+        margin-bottom: clamp(12px, 2.5vw, 30px);
+        flex-direction: column;
+    }
+    
+    .doctor {
+        padding: clamp(6px, 1.2vw, 12px);
+        min-height: clamp(120px, 18vh, 180px);
+    }
+    
+    .doctor_explain {
+        padding: clamp(8px, 1.5vw, 15px);
+    }
+    
+    .doctor_explain > h2 {
+        font-size: clamp(12px, 2.5vw, 20px);
+        text-align: center;
+    }
+    
+    .doctor_explain > div {
+        font-size: clamp(8px, 1.6vw, 11px);
+    }
+}
+
+/* 접근성 개선 */
+@media (prefers-reduced-motion: reduce) {
+    .card_box {
+        transition: none;
+    }
+    
+    .card_box:hover {
+        transform: none;
+    }
+}

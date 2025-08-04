@@ -1,0 +1,90 @@
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: clamp(20px, 4vw, 40px);
+    padding: clamp(30px, 6vw, 60px);
+    text-align: center;
+}
+
+.titleExplain {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: clamp(25px, 8vw, 35px);
+    font-weight: 650;
+    line-height: 1.4;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.contentExplain {
+    font-size: clamp(18px, 2.7vw, 24px);
+    line-height: 1.6;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .content {
+        gap: clamp(15px, 3vw, 30px);
+        padding: clamp(25px, 5vw, 50px);
+    }
+    
+    .titleExplain {
+        font-size: clamp(18px, 3.5vw, 26px);
+    }
+    
+    .contentExplain {
+        font-size: clamp(13px, 2.2vw, 18px);
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        gap: clamp(12px, 2.5vw, 20px);
+        padding: clamp(20px, 4vw, 40px);
+    }
+    
+    .titleExplain {
+        font-size: clamp(16px, 3vw, 22px);
+    }
+    
+    .contentExplain {
+        font-size: clamp(12px, 2vw, 16px);
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        gap: clamp(10px, 2vw, 15px);
+        padding: clamp(15px, 3vw, 25px);
+    }
+    
+    .titleExplain {
+        font-size: clamp(14px, 2.8vw, 18px);
+    }
+    
+    .contentExplain {
+        font-size: clamp(11px, 1.8vw, 14px);
+    }
+}
+
+@media (max-width: 360px) {
+    .content {
+        gap: clamp(8px, 1.5vw, 12px);
+        padding: clamp(12px, 2.5vw, 20px);
+    }
+    
+    .titleExplain {
+        font-size: clamp(12px, 2.5vw, 16px);
+    }
+    
+    .contentExplain {
+        font-size: clamp(10px, 1.6vw, 12px);
+    }
+}

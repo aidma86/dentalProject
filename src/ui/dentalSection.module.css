@@ -1,0 +1,28 @@
+.whole_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 60px;
+}
+
+.line{
+    height: 1px;
+    width: 500px;
+    border: 0;
+    background: #ddd;
+}
+
+.section_title{
+    color: black;
+    font-size: 40px;
+    font-weight: 600;
+}
+.section_content{
+    color: #666666;
+    text-align: center;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+    font-size: 15px;
+}

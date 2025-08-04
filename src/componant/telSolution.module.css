@@ -1,0 +1,274 @@
+.bottom_fixed_box {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 1.2vw, 25px);
+    width: 100%;
+    height: clamp(65px, 9vh, 100px);
+    bottom: 0;
+    left: 0;
+    background-color: rgba(2, 44, 141, 0.9);
+    color: white;
+    z-index: 1000;
+    padding: 0 clamp(8px, 1.5vw, 15px);
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.bottom_form {
+    display: flex;
+    gap: clamp(4px, 0.8vw, 8px);
+    align-items: center;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.solution_input{
+    height: clamp(32px, 5vh, 45px);
+    width: clamp(120px, 18vw, 250px);
+    font-size: clamp(12px, 1.8vw, 20px);
+    padding: 0 clamp(6px, 0.8vw, 8px);
+    box-sizing: border-box;
+    border-radius: clamp(4px, 1vw, 5px);
+    border: 1px solid #ccc;
+    flex-shrink: 0;
+    background-color: white;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.solution_input:focus {
+    outline: none;
+    border-color: #a2c742;
+    box-shadow: 0 0 0 2px rgba(162, 199, 66, 0.2);
+}
+
+.bottom_fixed_box > h2{
+    font-size: clamp(14px, 2.5vw, 35px);
+    padding-right: clamp(8px, 1.5vw, 80px);
+    padding-left: clamp(8px, 1.5vw, 80px);
+    margin: 0;
+    text-align: center;
+    line-height: 1.2;
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.bottom_fixed_box > h2 > span {
+    color: #3ff2f8;
+    text-shadow: 0 0 10px rgba(63, 242, 248, 0.5);
+}
+
+.solution_button{
+    font-size: clamp(12px, 1.8vw, 25px);
+    font-weight: bold;
+    animation: blink 1.5s infinite;
+    background: linear-gradient(45deg, #128686, #1a9f9f, #128686);
+    border: none;
+    color: white;
+    padding: clamp(5px, 1vh, 10px) clamp(10px, 1.5vw, 18px);
+    cursor: pointer;
+    border-radius: clamp(4px, 1vw, 5px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.solution_button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.solution_button:active {
+    transform: scale(0.98);
+}
+
+@keyframes blink {
+    0% {
+        background: #315bda;
+    }
+    50% {
+        background: #1a9f9f;
+        color: #030266;
+    }
+    100% {
+        background: #315bda;
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .bottom_fixed_box {
+        gap: clamp(6px, 1vw, 15px);
+        padding: 0 clamp(6px, 1.2vw, 12px);
+        height: clamp(60px, 8vh, 90px);
+    }
+    
+    .bottom_fixed_box > h2 {
+        padding-right: clamp(6px, 1.2vw, 50px);
+        padding-left: clamp(6px, 1.2vw, 50px);
+        font-size: clamp(12px, 2.2vw, 25px);
+    }
+    
+    .solution_input {
+        width: clamp(100px, 16vw, 200px);
+        font-size: clamp(10px, 1.6vw, 16px);
+    }
+    
+    .solution_button {
+        font-size: clamp(10px, 1.6vw, 20px);
+        padding: clamp(4px, 0.8vh, 8px) clamp(8px, 1.2vw, 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .bottom_fixed_box {
+        flex-direction: column;
+        height: auto;
+        min-height: clamp(75px, 12vh, 90px);
+        padding: clamp(8px, 2vw, 12px);
+        gap: clamp(6px, 1.5vw, 10px);
+    }
+    
+    .bottom_fixed_box > h2 {
+        padding-right: clamp(4px, 1vw, 15px);
+        padding-left: clamp(4px, 1vw, 15px);
+        font-size: clamp(12px, 2.8vw, 18px);
+        white-space: normal;
+        line-height: 1.3;
+    }
+    
+    .bottom_form {
+        width: 100%;
+        justify-content: center;
+        gap: clamp(4px, 1vw, 6px);
+    }
+    
+    .solution_input {
+        width: clamp(80px, 22vw, 150px);
+        font-size: clamp(10px, 2.2vw, 14px);
+        height: clamp(28px, 5vh, 35px);
+    }
+    
+    .solution_button {
+        font-size: clamp(10px, 2.2vw, 14px);
+        padding: clamp(5px, 1vh, 7px) clamp(8px, 1.8vw, 12px);
+    }
+}
+
+@media (max-width: 480px) {
+    .bottom_fixed_box {
+        padding: clamp(6px, 2.5vw, 10px);
+        gap: clamp(4px, 1.5vw, 8px);
+        min-height: clamp(65px, 10vh, 80px);
+    }
+    
+    .bottom_fixed_box > h2 {
+        font-size: clamp(10px, 3vw, 14px);
+        padding-right: clamp(3px, 0.8vw, 8px);
+        padding-left: clamp(3px, 0.8vw, 8px);
+    }
+    
+    .bottom_form {
+        gap: clamp(3px, 1.2vw, 5px);
+    }
+    
+    .solution_input {
+        width: clamp(65px, 25vw, 120px);
+        font-size: clamp(9px, 2.5vw, 12px);
+        height: clamp(25px, 6vh, 32px);
+    }
+    
+    .solution_button {
+        font-size: clamp(9px, 2.5vw, 12px);
+        padding: clamp(4px, 1vh, 6px) clamp(6px, 1.5vw, 10px);
+    }
+}
+
+@media (max-width: 360px) {
+    .bottom_fixed_box {
+        padding: clamp(5px, 2vw, 8px);
+        gap: clamp(3px, 1.2vw, 6px);
+        min-height: clamp(55px, 9vh, 70px);
+    }
+    
+    .bottom_fixed_box > h2 {
+        font-size: clamp(9px, 2.5vw, 12px);
+        padding-right: clamp(2px, 0.8vw, 6px);
+        padding-left: clamp(2px, 0.8vw, 6px);
+    }
+    
+    .bottom_form {
+        gap: clamp(2px, 1vw, 4px);
+    }
+    
+    .solution_input {
+        width: clamp(55px, 20vw, 100px);
+        font-size: clamp(8px, 2.2vw, 10px);
+        height: clamp(22px, 5vh, 28px);
+    }
+    
+    .solution_button {
+        font-size: clamp(8px, 2.2vw, 10px);
+        padding: clamp(3px, 0.8vh, 5px) clamp(5px, 1.2vw, 8px);
+    }
+}
+
+/* 접근성 개선 */
+@media (prefers-reduced-motion: reduce) {
+    .solution_button {
+        animation: none;
+    }
+    
+    .solution_button:hover {
+        transform: none;
+    }
+    
+    .solution_button:active {
+        transform: none;
+    }
+}
+
+/* 고대비 모드 지원 */
+@media (prefers-contrast: high) {
+    .bottom_fixed_box {
+        background-color: #000;
+        border-top: 3px solid #fff;
+    }
+    
+    .solution_input {
+        border: 2px solid #000;
+        background-color: #fff;
+        color: #000;
+    }
+    
+    .solution_button {
+        background: #000;
+        color: #fff;
+        border: 2px solid #fff;
+    }
+    
+    .bottom_fixed_box > h2 > span {
+        color: #fff;
+        text-shadow: none;
+    }
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+    .solution_input {
+        background-color: #2a2a2a;
+        color: #fff;
+        border-color: #555;
+    }
+    
+    .solution_input:focus {
+        border-color: #a2c742;
+        background-color: #333;
+    }
+}
