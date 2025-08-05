@@ -1,11 +1,10 @@
-
 .section {
   height: 100vh;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   color: white;
   text-align: center;
   position: relative;
@@ -16,7 +15,6 @@
 .sectionContent {
   z-index: 2;
   position: relative;
-  max-width: 1200px;
   padding: 0 20px;
   opacity: 0;
   transform: translateY(50px);
@@ -31,57 +29,33 @@
   }
 }
 
-/* 스크롤 진행도에 따른 부드러운 전환 */
-.section:nth-child(1) .sectionContent {
-  animation-delay: 0.1s;
-}
-
-.section:nth-child(2) .sectionContent {
-  animation-delay: 0.2s;
-}
-
-.section:nth-child(3) .sectionContent {
-  animation-delay: 0.3s;
-}
-
-.section:nth-child(4) .sectionContent {
-  animation-delay: 0.4s;
-}
 
 /* Section 1 - Hero Section */
 .section1 {
-  background: linear-gradient(135deg, #224187 0%, #1483c4 50%, #a2c742 100%);
+  background: linear-gradient(180deg, #00000026 0%, #ffffff00 50%, #ffffff87 100%);
   position: relative;
 }
 
-.section1::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  opacity: 0.3;
-}
 
 .mainTitle {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: 2px;
 }
 
 .subtitle {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 300;
-  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2.65rem);
+  font-weight: 500;
+  color: black;
+  margin-bottom: 1.2rem;
   opacity: 0.9;
 }
 
 .description {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: black;
   margin-bottom: 2rem;
   line-height: 1.6;
   opacity: 0.8;
@@ -94,7 +68,8 @@
   flex-wrap: wrap;
 }
 
-.primaryButton, .secondaryButton {
+.primaryButton,
+.secondaryButton {
   padding: 1rem 2rem;
   border: none;
   border-radius: 50px;
@@ -110,6 +85,7 @@
   background: linear-gradient(135deg, #a2c742 0%, #8bbd3a 100%);
   color: white;
   box-shadow: 0 4px 15px rgba(162, 199, 66, 0.3);
+  transition: all 0.5s;
 }
 
 .primaryButton:hover {
@@ -119,8 +95,8 @@
 
 .secondaryButton {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: black;
+  border: 2px solid rgba(92, 92, 92, 0.438);
 }
 
 .secondaryButton:hover {
@@ -155,14 +131,15 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid #e9ecef;
+  transition: all 0.5s;
 }
 
 .serviceCard:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
 .serviceCard h3 {
@@ -192,17 +169,22 @@
 }
 
 .doctorCard {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .doctorCard:hover {
   transform: translateY(-8px) scale(1.02);
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.doctorImg {
+  width:  50px;
+  height: fit-content;
 }
 
 .doctorCard h3 {
@@ -231,28 +213,35 @@
   margin: 0 auto;
 }
 
-.address, .hours, .phone {
-  background: rgba(255,255,255,0.1);
+.address,
+.hours,
+.phone {
+  background: rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.address:hover, .hours:hover, .phone:hover {
+.address:hover,
+.hours:hover,
+.phone:hover {
   transform: translateY(-8px) scale(1.02);
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
-.address h3, .hours h3, .phone h3 {
+.address h3,
+.hours h3,
+.phone h3 {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: #a2c742;
 }
 
-.address p, .hours p {
+.address p,
+.hours p {
   line-height: 1.6;
   opacity: 0.9;
 }
@@ -269,12 +258,18 @@
     flex-direction: column;
     align-items: center;
   }
-  
-  .serviceGrid, .doctorGrid, .contactInfo {
+
+  .serviceGrid,
+  .doctorGrid,
+  .contactInfo {
     grid-template-columns: 1fr;
   }
-  
-  .serviceCard, .doctorCard, .address, .hours, .phone {
+
+  .serviceCard,
+  .doctorCard,
+  .address,
+  .hours,
+  .phone {
     padding: 1.5rem;
   }
 }
@@ -283,22 +278,187 @@
   .mainTitle {
     font-size: clamp(2.5rem, 10vw, 4rem);
   }
-  
+
   .subtitle {
     font-size: clamp(1.2rem, 5vw, 2rem);
   }
-  
+
   .description {
     font-size: clamp(0.9rem, 4vw, 1.2rem);
   }
-  
-  .primaryButton, .secondaryButton {
+
+  .primaryButton,
+  .secondaryButton {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
 }
 
+/* Custom scrollbar */
+.fullpageContainer::-webkit-scrollbar {
+  width: 6px;
+}
 
+.fullpageContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fullpageContainer::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #224187 0%, #1483c4 100%);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.fullpageContainer::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #1483c4 0%, #a2c742 100%);
+  width: 8px;
+}
+
+/* 스크롤 인디케이터 */
+.scroll-indicator {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.scroll-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+/* 애니메이션 효과 */
+.section-content {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mainMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: clamp(70px, 12vh, 100px);
+  font-size: clamp(18px, 2.6vw, 26px);
+  background-color: white;
+  padding: 0 clamp(15px, 3vw, 30px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: clamp(8px, 1.5vw, 15px);
+}
+
+.mainLogo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(8px, 1.5vw, 15px);
+  flex-shrink: 0;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.mainLogoTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 1000;
+  color: #224187;
+  font-size: clamp(16px, 2.2vw, 28px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: clamp(120px, 15vw, 180px);
+  flex-shrink: 0;
+}
+
+.mainMenues {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1.2vw, 15px);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mainMenues::-webkit-scrollbar {
+  display: none;
+}
+
+.mainMenues > div {
+  padding: clamp(5px, 0.8vw, 8px) clamp(6px, 1vw, 12px);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: clamp(20px, 2.9vw, 22px);
+  font-weight: 800;
+}
+
+.mainMenues > div:hover {
+  background-color: #f8f9fa;
+  color: #224187;
+  transform: translateY(-2px);
+}
+
+.phone {
+  width: clamp(130px, 18vw, 250px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(14px, 2.2vw, 28px);
+  font-weight: bold;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.phone a {
+  display: flex;
+  align-items: center;
+  gap: clamp(1px, 0.2vw, 2px);
+  padding: clamp(5px, 0.8vw, 8px);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.phone a:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.05);
+}
+
+.phone .phone1 {
+  color: #a2c742;
+}
+.phone .phone2 {
+  color: #1483c4;
+}
+.phone .phone3 {
+  color: #224187;
+}
 
 /* Footer Styles */
 .footerContainer {
@@ -442,22 +602,22 @@
     gap: clamp(6px, 1.2vw, 12px);
     height: clamp(65px, 11vh, 90px);
   }
-  
+
   .mainLogo {
     padding: clamp(6px, 1.2vw, 12px);
     gap: clamp(6px, 1.2vw, 12px);
   }
-  
+
   .mainMenues {
     gap: clamp(5px, 1vw, 12px);
   }
-  
+
   .mainMenues > div {
     font-size: clamp(18px, 2.4vw, 20px);
     padding: clamp(4px, 0.7vw, 6px) clamp(5px, 0.9vw, 10px);
     font-weight: 800;
   }
-  
+
   .phone {
     width: clamp(110px, 16vw, 180px);
     font-size: clamp(12px, 2vw, 20px);
@@ -472,49 +632,49 @@
     padding: clamp(12px, 3vw, 18px);
     gap: clamp(8px, 2vw, 12px);
   }
-  
+
   .mainLogo {
     padding: clamp(6px, 1.5vw, 10px);
     justify-content: center;
     gap: clamp(6px, 1.5vw, 10px);
   }
-  
+
   .mainMenues {
     width: 100%;
     justify-content: center;
     gap: clamp(6px, 1.5vw, 10px);
     overflow-x: visible;
   }
-  
+
   .mainMenues > div {
-    font-size: clamp(15px, 3.0vw, 20px);
+    font-size: clamp(15px, 3vw, 20px);
     font-weight: 800;
     padding: clamp(5px, 1.2vw, 8px) clamp(6px, 1.5vw, 10px);
   }
-  
+
   .phone {
     width: 100%;
     justify-content: center;
     font-size: clamp(12px, 3.2vw, 16px);
   }
-  
+
   .footerContainer {
     flex-direction: column;
     padding: clamp(20px, 4vw, 25px) clamp(15px, 3vw, 20px);
     gap: clamp(20px, 4vw, 25px);
   }
-  
+
   .footerInfo,
   .footerServices,
   .footerContact {
     margin-right: 0;
     width: 100%;
   }
-  
+
   .footerInfo h3 {
     font-size: clamp(16px, 3.5vw, 18px);
   }
-  
+
   .footerServices h4,
   .footerContact h4 {
     font-size: clamp(14px, 2.8vw, 15px);
@@ -527,30 +687,30 @@
     gap: clamp(6px, 2vw, 10px);
     min-height: clamp(80px, 16vh, 100px);
   }
-  
+
   .mainLogo {
     padding: clamp(5px, 1.5vw, 8px);
     gap: clamp(5px, 1.5vw, 8px);
   }
-  
+
   .mainMenues {
     gap: clamp(4px, 1.5vw, 8px);
   }
-  
+
   .mainMenues > div {
-    font-size: clamp(16px, 3.0vw, 18px);
+    font-size: clamp(16px, 3vw, 18px);
     font-weight: 800;
     padding: clamp(4px, 1.2vw, 6px) clamp(5px, 1.5vw, 8px);
   }
-  
+
   .phone {
     font-size: clamp(10px, 3vw, 14px);
   }
-  
+
   .footerContainer {
     padding: clamp(15px, 4vw, 20px) clamp(12px, 3vw, 15px);
   }
-  
+
   .footerPhone {
     width: 100%;
     text-align: center;
@@ -564,26 +724,26 @@
     gap: clamp(5px, 1.5vw, 8px);
     min-height: clamp(70px, 15vh, 90px);
   }
-  
+
   .mainLogo {
     padding: clamp(4px, 1.2vw, 6px);
     gap: clamp(4px, 1.2vw, 6px);
   }
-  
+
   .mainMenues {
     gap: clamp(3px, 1.2vw, 6px);
   }
-  
+
   .mainMenues > div {
     font-size: clamp(15px, 2.9vw, 17px);
     font-weight: 800;
     padding: clamp(3px, 1vw, 5px) clamp(4px, 1.2vw, 6px);
   }
-  
+
   .phone {
     font-size: clamp(9px, 2.5vw, 12px);
   }
-  
+
   .footerContainer {
     padding: clamp(12px, 3vw, 15px) clamp(10px, 2.5vw, 12px);
   }
@@ -597,7 +757,7 @@
   .footerPhone {
     transition: none;
   }
-  
+
   .mainMenues > div:hover,
   .phone a:hover {
     transform: none;
@@ -609,7 +769,7 @@
   .section {
     will-change: transform;
   }
-  
+
   .sectionContent {
     will-change: transform, opacity;
   }

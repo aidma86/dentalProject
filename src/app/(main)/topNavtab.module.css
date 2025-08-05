@@ -1,0 +1,69 @@
+.mainMenu {
+  top: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: clamp(70px, 12vh, 100px);
+  font-size: clamp(18px, 2.6vw, 26px);
+  padding: 0 clamp(15px, 3vw, 30px);
+  gap: clamp(8px, 1.5vw, 15px);
+  z-index: 200;
+}
+
+.mainLogo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(8px, 1.5vw, 15px);
+  flex-shrink: 0;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.mainLogoTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 1000;
+  color: #224187;
+  font-size: clamp(16px, 2.2vw, 28px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: clamp(120px, 15vw, 180px);
+  flex-shrink: 0;
+}
+
+.mainMenues {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(6px, 1.2vw, 15px);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mainMenues::-webkit-scrollbar {
+  display: none;
+}
+
+.mainMenues > div {
+  padding: clamp(5px, 0.8vw, 8px) clamp(6px, 1vw, 12px);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  color: white;
+  font-size: clamp(20px, 2.9vw, 22px);
+  font-weight: 400;
+}
+
+.mainMenues > div:hover {
+  transform: translateY(-2px);
+}

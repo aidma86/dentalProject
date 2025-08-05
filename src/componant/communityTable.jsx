@@ -262,6 +262,17 @@ const ConsultationTable = () => {
       showFirstButton: true,
       showLastButton: true,
     },
+
+    renderBottomToolbarCustomActions: ({ table }) => (
+      <Button
+        variant="contained"
+        color="lightblue"
+        //extract all selected rows from the table instance and do something with them
+        onClick={() => handleDownloadRows(table.getSelectedRowModel().rows)}
+      >
+        Download Selected Rows
+      </Button>
+    ),
     
     // 행 액션들
     renderRowActions: ({ row }) => (
