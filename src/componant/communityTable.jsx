@@ -13,8 +13,13 @@ import {
   Lock,
   Search,
 } from '@mui/icons-material';
+import { getBoard } from "@/app/action/database";
 
-const ConsultationTable = () => {
+
+const boardData = await getBoard();
+  console.log("board data:", boardData);
+
+const BoardTable = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -346,4 +351,4 @@ const ConsultationTable = () => {
   );
 };
 
-export default ConsultationTable;
+export default BoardTable;
