@@ -8,8 +8,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model community {
-  id       Int       @id @default(autoincrement())
+model board {
+  id       Int       @id(map: "community_pkey") @default(autoincrement())
   username String    @db.VarChar(50)
   password String    @db.VarChar(50)
   phone    String    @db.VarChar(50)
@@ -21,4 +21,5 @@ model community {
   image2   String?   @db.VarChar(300)
   created  DateTime  @db.Timestamp(6)
   updated  DateTime? @db.Timestamp(6)
+  progress Int       @default(0)
 }
