@@ -1,4 +1,4 @@
-import TabMenu from "@/componant/tabMenu";
+import TabMenu from "@/componant/TabMenu";
 
 const tabList = [
   { content: "치과소개", href: "/dentalIntroduce" },

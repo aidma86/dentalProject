@@ -1,4 +1,4 @@
-import styles from "./topNavtab.module.css";
+import styles from "./TopNavtab.module.css";
 import Link from "next/link";
 import Image from "next/image";
 

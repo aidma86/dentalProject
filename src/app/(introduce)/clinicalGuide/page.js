@@ -1,5 +1,5 @@
-import ContentExplain from "@/ui/contentExplain";
-import styles from "./clinicalGuide.module.css";
+import ContentExplain from "@/ui/ContentExplain";
+import styles from "./ClinicalGuide.module.css";
 
 const textColorStyle = "늦은 시간에도 걱정 NO! <br><span style='color: #1483C4;'>매주 화/수/목 야간진료</span>(오후 9시까지)";
 

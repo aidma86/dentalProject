@@ -1,4 +1,4 @@
-import CommunityTable from "@/componant/communityTable"
+import CommunityTable from "@/componant/CommunityTable"
 
 export default function Notice() {
   return (

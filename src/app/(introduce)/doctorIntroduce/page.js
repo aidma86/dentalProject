@@ -1,5 +1,5 @@
-import ContentExplain from "@/ui/contentExplain";
-import DoctorSection from "@/ui/docotorSection";
+import ContentExplain from "@/ui/ContentExplain";
+import DoctorSection from "@/ui/DocotorSection";
 
 const containerStyle = {
     display: "flex",

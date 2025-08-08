@@ -1,4 +1,4 @@
-import CommunityTable from "@/componant/communityTable"
+import CommunityTable from "@/componant/CommunityTable"
 import client from "@/generated/prisma/client";
 import { getUser } from "@/action/database";
 
