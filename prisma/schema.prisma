@@ -9,17 +9,27 @@ datasource db {
 }
 
 model board {
-  id       Int       @id(map: "community_pkey") @default(autoincrement())
-  username String    @db.VarChar(50)
-  password String    @db.VarChar(50)
-  phone    String    @db.VarChar(50)
-  email    String?   @db.VarChar(355)
-  title    String    @db.VarChar(100)
-  status   String?   @db.VarChar(50)
-  content  String    @db.VarChar(500)
-  image1   String?   @db.VarChar(300)
-  image2   String?   @db.VarChar(300)
-  created  DateTime  @db.Timestamp(6)
-  updated  DateTime? @db.Timestamp(6)
-  progress Int       @default(0)
+  id        Int       @id(map: "community_pkey") @default(autoincrement())
+  username  String    @db.VarChar(50)
+  password  String    @db.VarChar(50)
+  phone     String    @db.VarChar(50)
+  email     String?   @db.VarChar(355)
+  title     String    @db.VarChar(100)
+  status    String    @db.VarChar(50)
+  content   String?   @db.VarChar(500)
+  image1    String?   @db.VarChar(300)
+  image2    String?   @db.VarChar(300)
+  createdat DateTime  @db.Timestamp(6)
+  updatedat DateTime? @db.Timestamp(6)
+  progress  Int       @default(0)
+}
+
+model Notice {
+  id        Int       @id @default(autoincrement())
+  title     String?   @db.VarChar(100)
+  user      String    @db.VarChar(50)
+  content   String?   @db.VarChar(500)
+  count     Int
+  createdat DateTime  @db.Timestamp(6)
+  updatedat DateTime? @db.Timestamp(6)
 }

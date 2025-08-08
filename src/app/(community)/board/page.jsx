@@ -1,17 +1,23 @@
-import CommunityTable from "@/componant/CommunityTable"
-import client from "@/generated/prisma/client";
-import { getUser } from "@/action/database";
+import BoardTable from "@/app/action/boardTable";
+import ContentExplain from "@/ui/ContentExplain";
+import { Box } from "@mui/material";
 
 export default async function Board() {
-  // getUser 함수를 실행하여 데이터 확인
-  const userData = await getUser();
-  console.log("User data:", userData);
-
   return (
     <>
       <div>
-        <CommunityTable/>
+        <ContentExplain title="온라인상담" content="" />
       </div>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <BoardTable />
+      </Box>
     </>
   );
 }
