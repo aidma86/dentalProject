@@ -12,11 +12,11 @@ export const getBoard = async () => {
         title: true,
         username: true,
         progress: true,
-        created: true,
+        createdat: true,
       },
       orderBy: [
         {
-          created: "desc",
+          createdat: "desc",
         },
         { id: "desc" },
       ],
