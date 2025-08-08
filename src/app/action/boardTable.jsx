@@ -107,7 +107,7 @@ const BoardTable = () => {
         ),
       },
       {
-        accessorKey: "created",
+        accessorKey: "createdat",
         header: "등록일",
         size: 150,
         muiTableHeadCellProps: {
