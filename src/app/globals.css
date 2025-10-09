@@ -3,15 +3,20 @@
   box-sizing: border-box;
 }
 
+/* 전체 높이 설정 및 하단 여백 제거 */
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 body{
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
 }
 
 a{
@@ -19,17 +24,6 @@ a{
   color: inherit;
 }
 
-/* 반응형 이미지 */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* 반응형 테이블 */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
 
 /* 스크롤바 스타일링 */
 ::-webkit-scrollbar {
@@ -72,19 +66,7 @@ table {
   object-fit: cover;
 }
 
-/* 접근성 개선 */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* 고대비 모드 지원 */
-@media (prefers-contrast: high) {
-  body {
-    background: white;
-    color: black;
-  }
+.swiper {
+  width: 100%;
+  height: 100%;
 }

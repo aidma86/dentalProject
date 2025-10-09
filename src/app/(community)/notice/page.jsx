@@ -1,5 +1,5 @@
-import BoardTable from "@/app/action/boardTable";
-import ContentExplain from "@/ui/contentExplain";
+import BoardTable from "@/app/(community)/board/boardTable";
+import ContentExplain from "@/ui/cntentExplain";
 import { Box } from "@mui/material";
 
 export default function Notice() {

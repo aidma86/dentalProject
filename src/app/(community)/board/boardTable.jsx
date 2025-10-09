@@ -7,10 +7,9 @@ import {
 } from "material-react-table";
 import { Box, Button, IconButton, Tooltip, Chip } from "@mui/material";
 import { Edit, Delete, Visibility, Lock, Search } from "@mui/icons-material";
-import { getBoard } from "@/app/action/database";
+import { getBoard } from "@/action/database";
 import dayjs from "dayjs";
 
-const boardData = await getBoard();
 
 const BoardTable = () => {
   const [data, setData] = useState([]);
@@ -20,10 +19,12 @@ const BoardTable = () => {
   useEffect(() => {
     setIsLoading(true);
     // API 호출 시뮬레이션
-    setTimeout(() => {
-      setData(boardData);
+    const fetchData = async () => {
+      const result = await getBoard();
+      setData(result);
       setIsLoading(false);
-    }, 1000);
+    };
+    fetchData();
   }, []);
 
   // 컬럼 정의
@@ -230,8 +231,8 @@ const BoardTable = () => {
     },
 
     muiTablePaperProps: {
-        elevation: 0, //change the mui box shadow
-      },
+      elevation: 0, //change the mui box shadow
+    },
 
     //테이블 간격
     muiTableBodyProps: {

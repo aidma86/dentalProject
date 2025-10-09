@@ -1,0 +1,399 @@
+/* Section 3 - Doctors */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.section3 {
+  background-image: linear-gradient(
+      135deg,
+      rgba(248, 249, 250, 0.8) 0%,
+      rgba(233, 236, 239, 0.9) 100%
+    ),
+    url("/image/bg/bg_3.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #224187;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.sectionContent {
+  width: 1200px;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+}
+
+/* 섹션 헤더 */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+  gap: 3rem;
+}
+
+.sectionTitleContainer {
+  flex: 1;
+  max-width: 500px;
+}
+
+.sectionTitle {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 300;
+  text-align: left;
+  color: #224187;
+  margin: 0;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+}
+
+.sectionSubTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  text-align: left;
+  color: #224187;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.sectionDescription {
+  flex: 1;
+  max-width: 400px;
+  text-align: right;
+}
+
+.descriptionTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: #224187;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.3;
+}
+
+.descriptionText {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #495057;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.doctorProfile {
+  width: 100%;
+  margin-top: 3rem;
+  border-top: solid 1px #cfcfcf;
+}
+
+.doctorCard {
+  background: transparent;
+  padding: 2.5rem;
+  border: 0;
+  display: flex;
+  gap: 6rem;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.profileBackImg {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 120px;
+  left: -160px;
+  width: 800px;
+  height: 800px;
+  background-image: url(/blob/Stacked_blob.png);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* .doctorCard:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+} */
+
+.doctorImageContainer {
+  flex-shrink: 0;
+  width: 400px;
+  height: 550px;
+  border-radius: 210px 150px 280px 120px;
+  overflow: hidden;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.doctorImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.profileBackImg {
+  /* content: ""; */
+  /* position: absolute; */
+  /* inset: 0; */
+  top: 120px;
+  left: -160px;
+  width: 800px;
+  height: 800px;
+  /* background-image: url(/blob/Stacked_blob.png); */
+  /* background-size: cover; */
+  /* background-position: center; */
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.doctorInfo {
+  flex: 1;
+  text-align: left;
+}
+
+.doctorHeader {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.doctorName {
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #224187;
+  margin: 0 0 0.5rem 0;
+}
+
+.doctorGrade {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #a2c742;
+  background: rgba(162, 199, 66, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.careerTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #224187;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #a2c742;
+}
+
+.doctorCareer {
+  text-align: left;
+}
+
+.careerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.careerItem {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: #555;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.careerItem::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #a2c742;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.doctorTabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.doctorTab {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1rem 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.doctorTab:hover {
+  background: white;
+  border-color: #224187;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 65, 135, 0.15);
+}
+
+.doctorTab.active {
+  background: #224187;
+  border-color: #224187;
+  color: white;
+  box-shadow: 0 4px 15px rgba(34, 65, 135, 0.2);
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.tabName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.doctorTab.active .tabName {
+  color: white;
+}
+
+.tabGrade {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.doctorTab.active .tabGrade {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+
+  .doctorCard {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .doctorImageContainer {
+    width: 220px;
+    height: 280px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .doctorInfo {
+    text-align: center;
+  }
+
+  .doctorHeader {
+    border-bottom: none;
+    padding-bottom: 1rem;
+  }
+
+  .doctorTabs {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .doctorTab {
+    padding: 0.8rem 1.3rem;
+    min-width: 110px;
+  }
+
+  .tabName {
+    font-size: 1rem;
+  }
+
+  .tabGrade {
+    font-size: 0.8rem;
+  }
+
+  .careerList {
+    gap: 0.6rem;
+  }
+
+  .careerItem {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctorCard {
+    padding: 1.5rem;
+  }
+
+  .doctorImageContainer {
+    width: 180px;
+    height: 240px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .doctorTabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.3rem;
+    padding: 0 1rem;
+  }
+
+  .doctorTab {
+    flex-shrink: 0;
+    padding: 0.7rem 1rem;
+    min-width: 90px;
+  }
+
+  .tabName {
+    font-size: 0.9rem;
+  }
+
+  .tabGrade {
+    font-size: 0.75rem;
+  }
+
+  .doctorName {
+    font-size: 1.5rem;
+  }
+
+  .careerTitle {
+    font-size: 1.1rem;
+  }
+
+  .careerItem {
+    font-size: 0.85rem;
+  }
+  
+  .sectionDescription {
+    display: none;
+  }
+}
