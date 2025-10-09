@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import styles from "./Section3.module.css";
+import styles from "./section3.module.css";
 import Image from "next/image";
 
 const doctorList = [

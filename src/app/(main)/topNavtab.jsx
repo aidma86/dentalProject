@@ -1,11 +1,40 @@
-import styles from "./TopNavtab.module.css";
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import styles from "./topNavtab.module.css";
 
 export default function TopNavtab() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    // 클라이언트 사이드에서만 실행되도록 보장
+    if (typeof window === 'undefined') return;
+
+    const handleScroll = () => {
+      console.log("handleScroll - scrollY:", window.scrollY);
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // 초기 상태 설정
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // 클린업 함수
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
   return (
-    <nav>
-      <div className={styles.mainMenu}>
+    <div className={`${styles.mainMenu} ${isScrolled ? styles.scrolled : ''}`}>
         <Link href="/" aria-label="메인 페이지로 이동">
           <div className={styles.mainLogo}>
             <Image
@@ -54,7 +83,6 @@ export default function TopNavtab() {
             </Link>
           </div>
         </nav>
-      </div>
-    </nav>
+    </div>
   );
 }

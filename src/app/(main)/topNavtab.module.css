@@ -11,6 +11,11 @@
   gap: clamp(8px, 1.5vw, 15px);
   background-color: #ffffff47;
   z-index: 200;
+  transition: background-color 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+.mainMenu.scrolled {
+  background-color: #ffffff; /* 또는 rgba(255, 255, 255, 0.95) */
 }
 
 .mainLogo {

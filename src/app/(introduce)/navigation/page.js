@@ -1,7 +1,7 @@
-import KakaoMap from "@/componant/KakaoMap";
-import styles from "./Navigation.module.css";
-import ContentExplain from "@/ui/ContentExplain";
-import MapButton from "@/componant/MapButton";
+import KakaoMap from "@/componant/kakaoMap";
+import styles from "./navigation.module.css";
+import ContentExplain from "@/ui/contentExplain";
+import MapButton from "@/componant/mapButton";
 
 const textCotent =
   "경남 창원시 성산구 원이대로 578 <span style='color:rgb(3, 69, 107);'>구트병원빌딩 4층</span><br>경남 창원시 성산구 중앙동 75-4<br><span style='color:rgb(3, 69, 107);'>055-123-4567</span>";

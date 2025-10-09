@@ -1,5 +1,5 @@
 import "./globals.css";
-import TopNavtab from "./(main)/TopNavtab";
+import TopNavtab from "./(main)/topNavtab";
 import { Noto_Sans_KR } from "next/font/google";
 
 
@@ -10,7 +10,6 @@ export const metadata = {
   description:
     "경상남도 창원시 의창구에 위치한 온가족치과의원입니다. 임플란트, 교정, 심미치료, 일반치료를 전문으로 합니다.",
   keywords: "치과, 임플란트, 교정, 심미치료, 창원치과, 온가족치과의원",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   robots: "index, follow",
   openGraph: {
     title: "온가족치과의원",
@@ -18,6 +17,12 @@ export const metadata = {
     type: "website",
     locale: "ko_KR",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }) {

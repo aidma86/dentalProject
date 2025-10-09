@@ -1,5 +1,5 @@
-import DentalSection from "@/ui/DentalSection";
-import ContentExplain from "@/ui/ContentExplain";
+import DentalSection from "@/ui/dentalSection";
+import ContentExplain from "@/ui/contentExplain";
 
 const textColorStyle = `"온가족치과의 <span style='color: #1483C4;'>특별함을 소개</span>합니다."`;
 
