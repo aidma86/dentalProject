@@ -2,8 +2,6 @@ import Image from "next/image";
 import styles from "./tabMenu.module.css";
 import Link from "next/link";
 
-import { getUser } from "@/app/action/database";
-
 export default function TabMenu(props) {
   return (
     <div className={styles.main_box}>

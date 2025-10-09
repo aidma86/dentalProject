@@ -1,4 +1,4 @@
-import BoardTable from "@/app/action/boardTable";
+import BoardTable from "@/app/(community)/board/boardTable";
 import ContentExplain from "@/ui/contentExplain";
 import { Box } from "@mui/material";
 

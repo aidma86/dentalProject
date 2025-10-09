@@ -1,110 +1,304 @@
-.mainMenu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: clamp(70px, 12vh, 100px);
-  font-size: clamp(18px, 2.6vw, 26px);
-  background-color: white;
-  padding: 0 clamp(15px, 3vw, 30px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  gap: clamp(8px, 1.5vw, 15px);
-}
 
-.mainLogo{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: clamp(8px, 1.5vw, 15px);
-  flex-shrink: 0;
-  min-width: 0;
-  flex-wrap: nowrap;
-}
-
-.mainLogoTitle{
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 1000;
-  color: #224187;
-  font-size: clamp(16px, 2.2vw, 28px);
-  white-space: nowrap;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  text-align: center;
+  position: relative;
   overflow: hidden;
-  text-overflow: ellipsis;
-  width: clamp(120px, 15vw, 180px);
-  flex-shrink: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mainMenues{
-  flex: 1;
+.sectionContent {
+  z-index: 2;
+  position: relative;
+  max-width: 1200px;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 스크롤 진행도에 따른 부드러운 전환 */
+.section:nth-child(1) .sectionContent {
+  animation-delay: 0.1s;
+}
+
+.section:nth-child(2) .sectionContent {
+  animation-delay: 0.2s;
+}
+
+.section:nth-child(3) .sectionContent {
+  animation-delay: 0.3s;
+}
+
+.section:nth-child(4) .sectionContent {
+  animation-delay: 0.4s;
+}
+
+/* Section 1 - Hero Section */
+.section1 {
+  background: linear-gradient(135deg, #224187 0%, #1483c4 50%, #a2c742 100%);
+  position: relative;
+}
+
+.section1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.mainTitle {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 300;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.description {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.ctaButtons {
   display: flex;
-  align-items: center;
+  gap: 1rem;
   justify-content: center;
-  gap: clamp(6px, 1.2vw, 15px);
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  flex-wrap: wrap;
 }
 
-.mainMenues::-webkit-scrollbar {
-  display: none;
-}
-
-.mainMenues > div {
-  padding: clamp(5px, 0.8vw, 8px) clamp(6px, 1vw, 12px);
-  border-radius: 6px;
-  transition: all 0.3s ease;
+.primaryButton, .secondaryButton {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  font-size: clamp(20px, 2.9vw, 22px);
-  font-weight: 800;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.mainMenues > div:hover {
-  background-color: #f8f9fa;
+.primaryButton {
+  background: linear-gradient(135deg, #a2c742 0%, #8bbd3a 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(162, 199, 66, 0.3);
+}
+
+.primaryButton:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(162, 199, 66, 0.4);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.secondaryButton:hover {
+  background: white;
   color: #224187;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
-.phone{  
-  width: clamp(130px, 18vw, 250px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(14px, 2.2vw, 28px);
-  font-weight: bold;
-  flex-shrink: 0;
-  min-width: 0;
+/* Section 2 - Services */
+.section2 {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #224187;
 }
 
-.phone a {
-  display: flex;
-  align-items: center;
-  gap: clamp(1px, 0.2vw, 2px);
-  padding: clamp(5px, 0.8vw, 8px);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  white-space: nowrap;
+.sectionTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #224187;
+  text-align: center;
 }
 
-.phone a:hover {
-  background-color: #f8f9fa;
-  transform: scale(1.05);
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.phone .phone1{
+.serviceCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #e9ecef;
+}
+
+.serviceCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.serviceCard h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #224187;
+  margin-bottom: 1rem;
+}
+
+.serviceCard p {
+  color: #495057;
+  line-height: 1.6;
+}
+
+/* Section 3 - Doctors */
+.section3 {
+  background: linear-gradient(135deg, #224187 0%, #1483c4 100%);
+  color: white;
+}
+
+.doctorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.doctorCard {
+  background: rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.doctorCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255,255,255,0.15);
+}
+
+.doctorCard h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
   color: #a2c742;
 }
-.phone .phone2{
-  color: #1483c4;
+
+.doctorCard p {
+  line-height: 1.6;
+  opacity: 0.9;
 }
-.phone .phone3{
-  color: #224187;
+
+/* Section 4 - Contact */
+.section4 {
+  background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
+  color: white;
 }
+
+.contactInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.address, .hours, .phone {
+  background: rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.address:hover, .hours:hover, .phone:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255,255,255,0.15);
+}
+
+.address h3, .hours h3, .phone h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #a2c742;
+}
+
+.address p, .hours p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.phoneNumber {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #a2c742;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .serviceGrid, .doctorGrid, .contactInfo {
+    grid-template-columns: 1fr;
+  }
+  
+  .serviceCard, .doctorCard, .address, .hours, .phone {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitle {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+  
+  .subtitle {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+  
+  .description {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+  }
+  
+  .primaryButton, .secondaryButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+
 
 /* Footer Styles */
 .footerContainer {
@@ -407,5 +601,16 @@
   .mainMenues > div:hover,
   .phone a:hover {
     transform: none;
+  }
+}
+
+/* 부드러운 스크롤을 위한 추가 설정 */
+@media (prefers-reduced-motion: no-preference) {
+  .section {
+    will-change: transform;
+  }
+  
+  .sectionContent {
+    will-change: transform, opacity;
   }
 }
