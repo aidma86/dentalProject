@@ -5,6 +5,7 @@
 
 /* 전체 높이 설정 및 하단 여백 제거 */
 html, body {
+  height: 100vh;
   min-height: 100%;
   margin: 0;
   padding: 0;

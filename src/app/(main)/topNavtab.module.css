@@ -9,13 +9,13 @@
   font-size: clamp(18px, 2.6vw, 26px);
   padding: 0 clamp(15px, 3vw, 30px);
   gap: clamp(8px, 1.5vw, 15px);
-  background-color: #ffffff47;
+  background: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
   z-index: 200;
   transition: background-color 0.3s ease; /* 부드러운 전환 효과 */
 }
 
 .mainMenu.scrolled {
-  background-color: #ffffff; /* 또는 rgba(255, 255, 255, 0.95) */
+  background: #ffffff; /* 또는 rgba(255, 255, 255, 0.95) */
 }
 
 .mainLogo {

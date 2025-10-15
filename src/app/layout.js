@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body className={notoSans.className}>
-        <TopNavtab />
+        {/* <TopNavtab /> */}
         <main role="main">{children}</main>
       </body>
     </html>
